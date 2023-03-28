@@ -6,6 +6,7 @@ const path = require("path");
 const typeDefs = gql`
   type Query {
     hello(message: String!): String
+    count(message: String!): String
   }
 `;
 
@@ -14,6 +15,9 @@ const resolvers = {
   Query: {
     hello: (_, { message }) => {
       return `¡Hola, ${message}! Un saludo por parte del profe `;
+    },
+    count: (_, { message }) => {
+      return `Your message has ${message.length - message.replace(/[A-Z]/g, '').length} uppercase letters`;
     },
   },
 };
