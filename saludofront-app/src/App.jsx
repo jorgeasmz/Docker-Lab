@@ -12,6 +12,7 @@ const HELLO_QUERY = gql`
     hello(message: $message)
     count(message: $message)
     len(message: $message)
+    anotherHello(message: $message)
   }
 `;
 
@@ -45,6 +46,7 @@ function Hello() {
       {data && <h2 className='mt-3'>{data.hello}</h2>}
       {data && <h2 className='mt-3'>{data.count}</h2>}
       {data && <h2 className='mt-3'>{data.len}</h2>}
+      {data && <h2 className='mt-3'>{data.anotherHello}</h2>}
     </div>
   );
 }
