@@ -7,6 +7,7 @@ const typeDefs = gql`
   type Query {
     hello(message: String!): String
     count(message: String!): String
+    len(message: String!): String
   }
 `;
 
@@ -19,6 +20,9 @@ const resolvers = {
     count: (_, { message }) => {
       return `Your message has ${message.length - message.replace(/[A-Z]/g, '').length} uppercase letters`;
     },
+    len: (_, { message }) => {
+        return `El mensaje tiene ${message.length} letras `;
+      },
   },
 };
 

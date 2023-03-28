@@ -11,6 +11,7 @@ const HELLO_QUERY = gql`
   query Hello($message: String!) {
     hello(message: $message)
     count(message: $message)
+    len(message: $message)
   }
 `;
 
@@ -43,6 +44,7 @@ function Hello() {
       </Form>
       {data && <h2 className='mt-3'>{data.hello}</h2>}
       {data && <h2 className='mt-3'>{data.count}</h2>}
+      {data && <h2 className='mt-3'>{data.len}</h2>}
     </div>
   );
 }
