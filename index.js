@@ -8,6 +8,7 @@ const typeDefs = gql`
     hello(message: String!): String
     count(message: String!): String
     len(message: String!): String
+    anotherHello(message: String!): String
   }
 `;
 
@@ -23,6 +24,9 @@ const resolvers = {
     len: (_, { message }) => {
         return `El mensaje tiene ${message.length} letras `;
       },
+    anotherHello: (_, { message }) => {
+      return `¡Bonjour, ${message}! Je ne parle pas français `;
+    },
   },
 };
 
